@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace WebAPI.Models
+﻿namespace WebAPI.Models
 {
-    public class Person
+    public class User
     {
         public int Id { get; set; }
 
@@ -18,6 +13,5 @@ namespace WebAPI.Models
         public int Age { get; set; }
 
         public string Address { get; set; }
-
     }
 }

@@ -38,16 +38,16 @@ In this project, you learn how to:
         Test the location header URI.
             . Select the Headers tab in the Response pane.
             . Set the method to GET.
-            . Paste the URI (for example, https://localhost:5001/api/TodoItems/1).
+            . Paste the URI (for example, https://localhost:55314/api/users/1).
             . Select Send.
 
         Test the GET methods.
             These methods implement two GET endpoints:
                 GET /api/TodoItems
                 GET /api/TodoItems/{id}
-             Test the app by calling the two endpoints from a browser or Postman. For example:
-                https://localhost:5001/api/TodoItems
-                https://localhost:5001/api/TodoItems/1
+            Test the app by calling the two endpoints from a browser or Postman. For example:
+                https://localhost:55314/api/users
+                https://localhost:55314/api/users/1
 
 
         Test the PutTodoItem method
@@ -55,5 +55,5 @@ In this project, you learn how to:
 
         Test the DeleteTodoItem method
             . Set the method to DELETE.
-            . Set the URI of the object to delete (for example https://localhost:5001/api/Person/1).
+            . Set the URI of the object to delete (for example https://localhost:55314/api/users/1).
             . Select Send.
