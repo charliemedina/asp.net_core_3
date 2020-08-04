@@ -7,9 +7,12 @@ namespace WebAPI.Validators
     {
         public UserModelValidation()
         {
-            RuleFor(user => user.FullName)
+            RuleFor(user => user.FirstName)
                .NotEmpty()
-               .MaximumLength(100);
+               .MaximumLength(50);
+            RuleFor(user => user.LastName)
+               .NotEmpty()
+               .MaximumLength(50);
         }
     }
 
@@ -17,9 +20,12 @@ namespace WebAPI.Validators
     {
         public UserModelUpdateValidation()
         {
-            RuleFor(user => user.FullName)
+            RuleFor(user => user.FirstName)
                .NotEmpty()
-               .MaximumLength(100);
+               .MaximumLength(50);
+            RuleFor(user => user.LastName)
+               .NotEmpty()
+               .MaximumLength(50);
         }
     }
 }

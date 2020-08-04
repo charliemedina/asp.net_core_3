@@ -19,7 +19,8 @@ namespace WebAPI.Services
                 Address = model.Address,
                 Age = model.Age,
                 Email = model.Email,
-                FullName = model.FullName,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
                 PhoneNumber = model.PhoneNumber
             };
 
@@ -55,7 +56,8 @@ namespace WebAPI.Services
             userToBeUpdate.Address = user.Address;
             userToBeUpdate.Age = user.Age;
             userToBeUpdate.Email = user.Email;
-            userToBeUpdate.FullName = user.FullName;
+            userToBeUpdate.FirstName = user.FirstName;
+            userToBeUpdate.LastName = user.LastName;
             userToBeUpdate.PhoneNumber = user.PhoneNumber;
 
             await _userDbContext.SaveChangesAsync();

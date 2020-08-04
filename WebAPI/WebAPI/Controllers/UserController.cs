@@ -30,7 +30,7 @@ namespace WebAPI.Controllers
 
         // GET: api/users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserModel>> GetUserById(int id)
+        public async Task<ActionResult<UserModel>> GetUser(int id)
         {
             var user = await _userService.GetUser(id);
 
@@ -50,13 +50,11 @@ namespace WebAPI.Controllers
             var userToBeUpdate = await _userService.GetUser(id);
 
             if (userToBeUpdate == null)
-            {
                 return NotFound();
-            }
 
             var updatedUser = await _userService.UpdateUser(id, user);
 
-            return Ok(_mapper.Map<User, UpdateModel>(updatedUser));
+            return  Ok(_mapper.Map<User, UpdateModel>(updatedUser));
 
         }
 

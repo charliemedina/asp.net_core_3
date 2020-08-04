@@ -10,7 +10,6 @@ using Microsoft.OpenApi.Models;
 using WebAPI.Models;
 using WebAPI.Services;
 using WebAPI.Validators;
-using Swashbuckle.AspNetCore.Swagger;
 
 namespace WebAPI
 {

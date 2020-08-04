@@ -3,9 +3,9 @@ using WebAPI.Models;
 
 namespace WebAPI.Mapping
 {
-    public class MappingProfile: Profile
+    public class AutoMapperProfile: Profile
     {
-        public MappingProfile()
+        public AutoMapperProfile()
         {
             // Domain to Model
             CreateMap<User, UserModel>();
