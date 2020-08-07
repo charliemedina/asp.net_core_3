@@ -16,7 +16,7 @@ namespace WebAPI.Validators
         }
     }
 
-    public class UserModelUpdateValidation : AbstractValidator<UpdateModel>
+    public class UserModelUpdateValidation : AbstractValidator<UserModel>
     {
         public UserModelUpdateValidation()
         {

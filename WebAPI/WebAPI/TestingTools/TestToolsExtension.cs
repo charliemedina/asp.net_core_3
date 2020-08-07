@@ -8,13 +8,10 @@ namespace WebAPI.TestingTools
 {
     public static class TestToolsExtension
     {
-        public static async Task<UserDbContext> GetDatabaseContext(int count)
+        public static async Task<UserDbContext> CreateContextWithFakeUsers(int count)
         {
-            var options = new DbContextOptionsBuilder<UserDbContext>()
-                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
-                .Options;
-            var databaseContext = new UserDbContext(options);
-            databaseContext.Database.EnsureCreated();
+            var databaseContext = CreateContext();
+
             if (await databaseContext.Users.CountAsync() <= 0)
             {
                 for (int i = 1; i <= count; i++)
@@ -26,13 +23,23 @@ namespace WebAPI.TestingTools
             return databaseContext;
         }
 
-        private static User CreateFakeUser(int id)
+        public static UserDbContext CreateContext()
+        {
+            var options = new DbContextOptionsBuilder<UserDbContext>()
+                            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+                            .Options;
+
+            var databaseContext = new UserDbContext(options);
+            databaseContext.Database.EnsureCreated();
+
+            return databaseContext;
+        }
+
+        public static User CreateFakeUser(int id)
         {
             var testUsers = new Faker<User>()
-                //Optional: Call for objects that have complex initialization
-                .CustomInstantiator(f => new User())
                 //Basic rules using built-in generators
-                .RuleFor(u => u.Id, (f, u) => id)
+                .RuleFor(u => u.Id, f => id)
                 .RuleFor(u => u.FirstName, (f, u) => f.Name.FirstName())
                 .RuleFor(u => u.LastName, (f, u) => f.Name.LastName())
                 .RuleFor(u => u.Email, (f, u) => f.Internet.Email(u.FirstName, u.LastName))

@@ -1,11 +1,5 @@
 # basic-crud
-In this project, you learn how to:
-
-1 - Create a web API project.
-2 - Add a model class and a database context.
-3 - Scaffold a controller with CRUD methods.
-4 - Configure routing, URL paths, and return values.
-5 - Call the web API with Postman.
+This project shows how to build a basic React CRUD adn Asp.NET Core 3
 
 1 - Create a new ASP.NET Core Web Application (disabled HTTP configurations).
     - Install NuGet packages.
@@ -57,3 +51,10 @@ In this project, you learn how to:
             . Set the method to DELETE.
             . Set the URI of the object to delete (for example https://localhost:55314/api/users/1).
             . Select Send.
+
+6 - Add FluentValidation for automatic validation.
+https://docs.fluentvalidation.net/en/latest/index.html
+
+
+7 - Swagger tooling for API's built with ASP.NET Core. Generate beautiful API documentation, including a UI to explore and test operations, directly from your routes, controllers and models.
+https://github.com/domaindrivendev/Swashbuckle.AspNetCore#explicit-responses

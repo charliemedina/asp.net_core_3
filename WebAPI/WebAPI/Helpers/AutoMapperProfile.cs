@@ -9,11 +9,9 @@ namespace WebAPI.Mapping
         {
             // Domain to Model
             CreateMap<User, UserModel>();
-            CreateMap<User, UpdateModel>();
 
             // Model to Domain
             CreateMap<UserModel, User>();
-            CreateMap<UpdateModel, User>();
         }
     }
 }

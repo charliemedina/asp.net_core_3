@@ -10,7 +10,7 @@ namespace WebAPI.Services
 
         Task<User> GetUser(int id);
 
-        Task<User> UpdateUser(int id, UpdateModel user);
+        Task<User> UpdateUser(int id, UserModel user);
 
         Task<User> CreateUser(UserModel user);
 

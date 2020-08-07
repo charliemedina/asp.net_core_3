@@ -49,7 +49,7 @@ namespace WebAPI.Services
             return await _userDbContext.Users.ToListAsync();
         }
 
-        public async Task<User> UpdateUser(int id, UpdateModel user)
+        public async Task<User> UpdateUser(int id, UserModel user)
         {
             var userToBeUpdate = await _userDbContext.Users.FindAsync(id);
 

@@ -44,7 +44,7 @@ namespace WebAPI.Controllers
 
         // PUT: api/users/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<UserModel>> UpdateUser(int id, [FromBody] UpdateModel user)
+        public async Task<ActionResult<UserModel>> UpdateUser(int id, [FromBody] UserModel user)
         {
 
             var userToBeUpdate = await _userService.GetUser(id);
@@ -54,8 +54,7 @@ namespace WebAPI.Controllers
 
             var updatedUser = await _userService.UpdateUser(id, user);
 
-            return  Ok(_mapper.Map<User, UpdateModel>(updatedUser));
-
+            return  Ok(_mapper.Map<User, UserModel>(updatedUser));
         }
 
         // POST: api/users
