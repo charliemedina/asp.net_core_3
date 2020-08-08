@@ -87,14 +87,14 @@ namespace UnitTesting
             Assert.IsNull(actual);
         }
 
-        private static async Task<UserService> BuildService(UserDbContext dbContext = null)
+        private async Task<UserService> BuildService(UserDbContext dbContext = null)
         {
             var context = dbContext ?? await TestToolsExtension.CreateContextWithFakeUsers(10);
             var service = new UserService(context);
             return service;
         }
 
-        private static UserModel CreateUserModel()
+        private UserModel CreateUserModel()
         {
             var fakeUser = TestToolsExtension.CreateFakeUser(1);
             var model = new UserModel
